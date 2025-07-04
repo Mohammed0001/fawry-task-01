@@ -9,15 +9,12 @@ public class CartItem {
         if (quantity > product.getQuantity()) {
             throw new IllegalArgumentException("Insufficient Quantity");
         }
-
-        // Check if the product is expirable and expired
         if (product instanceof ExpireProduct) {
             Date expiryDate = ((ExpireProduct) product).getExpiryDate();
             if (expiryDate.before(new Date())) {
                 throw new IllegalArgumentException("Product has expired");
             }
         }
-
         this.product = product;
         this.quantity = quantity;
         product.decrementQuantity(quantity);

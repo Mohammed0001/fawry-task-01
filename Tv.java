@@ -10,6 +10,9 @@ public class Tv extends Product implements IShippingService {
         return super.weight;
     }
 
-    
+    @Override
+    public void setWeight(double weight) {
+        super.weight = weight;
+    }
 
 }

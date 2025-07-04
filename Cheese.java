@@ -11,5 +11,10 @@ public class Cheese extends ExpireProduct implements IShippingService {
     public double getWeight() {
        return super.weight;
     }
+
+    @Override
+    public void setWeight(double weight) {
+        super.weight = weight;
+    }
     
 }
